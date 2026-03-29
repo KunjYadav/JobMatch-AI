@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* 1. Define custom colors for Tailwind v4 */
+@theme {
+  /* Sleek modern slate/zinc hybrid for a premium SaaS look */
+  --color-base-50: #f8fafc;
+  --color-base-100: #f1f5f9;
+  --color-base-200: #e2e8f0;
+  --color-base-300: #cbd5e1;
+  --color-base-400: #94a3b8;
+  --color-base-500: #64748b;
+  --color-base-600: #475569;
+  --color-base-700: #334155;
+  --color-base-800: #1e293b;
+  --color-base-900: #0f172a;
+  --color-base-950: #020617;
+
+  /* Vibrant primary brand color (Violet/Indigo) */
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+
+  /* Accent color for matches (Teal) */
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+}
+
+/* 2. Enable class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+/* 3. Global smooth transitions & base colors */
+@layer base {
+  body {
+    @apply bg-base-50 text-base-900 transition-colors duration-300 antialiased selection:bg-primary-500/30;
+  }
+
+  .dark body {
+    @apply bg-base-950 text-base-100 selection:bg-primary-500/40;
+  }
+}
+
+/* Custom animations for modals and cards */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
+.animate-scale-in { animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-slide-up { animation: slide-up 0.3s ease-out forwards; }
+
+/* Custom scrollbar for a cleaner UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-base-300 rounded-full dark:bg-base-800;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-base-400 dark:bg-base-700;
+}

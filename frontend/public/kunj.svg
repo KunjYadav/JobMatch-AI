@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="kunjGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="512" height="512" rx="128" fill="url(#kunjGradient)" />
+  
+  <g filter="url(#shadow)">
+    <path d="M 190 150 L 190 362" stroke="#ffffff" stroke-width="60" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 190 270 L 320 150" stroke="#ffffff" stroke-width="60" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 230 250 L 330 362" stroke="#ffffff" stroke-width="60" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    
+    <circle cx="340" cy="150" r="30" fill="#ffffff" />
+  </g>
+</svg>
